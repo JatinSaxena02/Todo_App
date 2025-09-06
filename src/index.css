@@ -1,15 +1,15 @@
-*{
+* {
   margin: 0;
   padding: 0;
   box-sizing: border-box;
 }
-body{
-    height: 100vh;
-    background: linear-gradient(70deg, rgb(141, 141, 200), pink);
+
+body {
+  height: 100vh;
+  background: linear-gradient(70deg, rgb(141, 141, 200), pink);
 }
 
-
-.wrapper{
+.wrapper {
   top: 150px;
   bottom: 10px;
   max-width: 1440px;
@@ -23,54 +23,90 @@ body{
   flex-direction: column;
   justify-content: center;
   align-items: center;
+  padding: 20px;
 }
 
-.custom-form{
+/* Form */
+.custom-form {
   width: 400px;
+  max-width: 100%; /* ✅ shrink on mobile */
   height: auto;
   margin: 20px auto;
 }
 
-.input-and-btn{
+.input-and-btn {
   display: flex;
+  gap: 10px;
 }
 
 .todo-box {
   width: 400px;
-  margin: 0 auto;
+  max-width: 100%; /* ✅ mobile safe */
+  margin: 0 auto 15px auto;
   display: flex;
   font-weight: bold;
   flex-direction: row;
   justify-content: space-between;
   box-shadow: 0px 0px 12px lightgray;
   border-radius: 10px;
-  margin-bottom: 15px;
+  padding: 8px;
 }
 
-.todo-box .content{
+.todo-box .content {
   display: flex;
+  align-items: center;
 }
 
 .todo-box .content p {
   margin: 0px auto;
   margin-left: 6px;
   padding: 6px;
-  font-size: 2vw;
+  font-size: 18px; /* ✅ readable base size */
 }
 
-.todo-box span{
+.todo-box span {
   margin: 0 5px;
 }
 
-.delete-all{
+.delete-all {
   width: 400px;
+  max-width: 100%; /* ✅ mobile safe */
 }
 
 .actions-box {
   cursor: pointer;
   margin: 15px 10px auto;
 }
-.back-btn{
+
+.back-btn {
   margin-top: 5px;
   width: 100%;
+}
+
+/* 📱 Mobile Styling */
+@media (max-width: 600px) {
+  .wrapper {
+    width: 95%; /* ✅ more space */
+    justify-content: center; /* ✅ bring closer */
+    padding: 10px;
+  }
+
+  .input-and-btn {
+    flex-direction: column;
+  }
+
+  .todo-btn,
+  .back-btn {
+    width: 100%;
+    margin-top: 10px;
+  }
+
+  .todo-box .content p {
+    font-size: 16px; /* ✅ balanced text */
+  }
+
+  .heading-label {
+    font-size: 18px; /* ✅ smaller heading for mobile */
+    text-align: center;
+  }
 }
